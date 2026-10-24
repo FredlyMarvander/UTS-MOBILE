@@ -19,7 +19,7 @@ export function InfoCard({ title, status, onPress }: InfoCardProps) {
         <Text style={[styles.title, { color: theme.text }]}>{title}</Text>
         <View style={[styles.badge, isSelesai ? styles.badgeGreen : styles.badgeOrange]}>
           <Text style={[styles.badgeText, isSelesai ? styles.textGreen : styles.textOrange]}>
-            {isSelesai ? 'Selesai' : 'Proses'}
+            {status}
           </Text>
         </View>
       </View>
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
   badgeText: {
     fontSize: 12,
     fontWeight: 700,
+    textTransform: 'capitalize',
   },
   textGreen: {
     color: '#15803D',
